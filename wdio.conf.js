@@ -1,4 +1,5 @@
-const path = require("path");
+// const path = require("path");
+import path from "path";
 
 export const config = {
   //
@@ -7,7 +8,7 @@ export const config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
-  port: 4723,
+  port: 4726,
   //
   // ==================
   // Specify Test Files
@@ -58,11 +59,13 @@ export const config = {
       "appium:platformName": "Android",
       "appium:platformVersion": "12.0",
       "appium:deviceName": "Pixel 4",
-      "appium:automationName": "UiAutomator2",
-      "appium:app": path.join(
-        process.cwd(),
-        "webdriverio-appium-v8/app/android/ApiDemos-debug.apk"
-      ),
+      "appium:automationName": "UIAutomator2",
+      // "appium:app": path.join(
+      //   process.cwd(),
+      //   "webdriverio-appium-v8/app/android/ApiDemos-debug.apk"
+      // ),
+      "appium:app":
+        "/Users/llebioda/Desktop/Private/WebdriverIO, Appium/app/android/ApiDemos-debug.apk",
     },
   ],
 
