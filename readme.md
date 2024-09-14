@@ -29,3 +29,14 @@ https://github.com/dilpreetj/webdriverio-appium-course
 - adb devices (to see if there's an emulator running);
 - npx wdio (to run tests);
 - appium -p 4724 (to set up appium server port);
+
+# writing tests flow (Appium + Appium Inspector):
+
+- run Appium server in terminal => appium -p 4724;
+- open Android Studio, run emulator compatible with Appium Inspector data (saved capability set);
+- find elements for testing,
+
+# executing tests flow (WebdriverIO):
+
+- open Android Studio, run emulator compatible with wdio.conf.js data
+- run test in a terminal => npx wdio;
