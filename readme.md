@@ -2,6 +2,28 @@ Appium & WebdriverIO
 #Dilpreet code repository:
 https://github.com/dilpreetj/webdriverio-appium-course
 
+we are writing a webdriverIO test
+and run it in android emulator
+with the help of appium inspector & appium server
+
+# important
+
+appium -p 4724 (for Appium Inspector)
+Pixel 4 => npx wdio
+Pixel 7 => Appium Inspector
+
+# writing tests flow (Appium + Appium Inspector):
+
+- run Appium server in terminal => appium -p 4724;
+- open Android Studio, run emulator compatible with Appium Inspector data (saved capability set);
+- find elements for testing,
+
+# executing tests flow (WebdriverIO):
+
+- open Android Studio,
+- run emulator compatible with capabilities declared in wdio.conf.js,
+- run test in a terminal => npx wdio;
+
 # prerequisites
 
 - node.js (eg. vith nvm - node version manager);
@@ -9,7 +31,7 @@ https://github.com/dilpreetj/webdriverio-appium-course
 - Android Studio (from https://developer.android.com/studio) + setting up ANDROID_HOME path / Android Emulator setup: Android Studio / AVD Manager / Create virtual device / select Phone / download S (Android 12.0) or R (Android 11.0) or Q (Android 10.0) / select S, R or Q / run emulator
 - Appium Desktop Inspector (from https://github.com/appium/appium-inspector/releases); later we will be connecting emulator with appium server;
 - Appium 2.0 (npm install -g appium / or in case of errors => sudo npm install -g appium --unsafe-perm=true --allow-root);
-- install Appium drivers => 1) appium driver install xcuitest / 2) appium driver install uiautomator2; check drivers => 3) appium driver lis (or with flag --installed);
+- install Appium drivers => 1) appium driver install xcuitest / 2) appium driver install uiautomator2; check drivers => 3) appium driver list (or with flag --installed);
 - install appium-doctor => sudo npm install appium-doctor -g (DEPRECATED!);
 
 # WebdriverIO setup and configuration:
@@ -29,14 +51,3 @@ https://github.com/dilpreetj/webdriverio-appium-course
 - adb devices (to see if there's an emulator running);
 - npx wdio (to run tests);
 - appium -p 4724 (to set up appium server port);
-
-# writing tests flow (Appium + Appium Inspector):
-
-- run Appium server in terminal => appium -p 4724;
-- open Android Studio, run emulator compatible with Appium Inspector data (saved capability set);
-- find elements for testing,
-
-# executing tests flow (WebdriverIO):
-
-- open Android Studio, run emulator compatible with wdio.conf.js data
-- run test in a terminal => npx wdio;
