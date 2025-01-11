@@ -1,6 +1,8 @@
-function averageValue(a, b, c, d) {
-	return (a + b + c + d) / 4;
-}
+const multiply = function (x, y) {
+	return x * y;
+};
 
-const result = averageValue(30, 60, 90, 120);
-console.log(result);
+console.log(multiply(3, 6));
+
+const test = multiply;
+console.log(test(90, 9));

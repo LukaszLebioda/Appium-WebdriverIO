@@ -9,8 +9,8 @@
     "@wdio/spec-reporter": "^8.39.0",
     "@wdio/visual-service": "^5.1.1",
     "appium": "^2.11.2",
-    "appium-uiautomator2-driver": "^3.7.7",
-    "appium-xcuitest-driver": "^7.24.1"
+    "appium-uiautomator2-driver": "^3.9.8",
+    "appium-xcuitest-driver": "^7.35.1"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"

@@ -3,11 +3,9 @@ describe("Android - Find element tests", () => {
 	// that's why it's the best wayt to find elements
 	it("Find element by accessibility id", async () => {
 		// await driver.pause(5000);
-		// arrange => find element by accessibility id (~)
+		// find element by accessibility id (~)
 		const appOption = await $("~App");
-		// act => click on that element
 		await appOption.click();
-		// assert => make sure that link was clicked and another screen is displayed
 		const actionBar = await $("~Action Bar");
 		await expect(actionBar).toBeExisting();
 	});
@@ -21,18 +19,19 @@ describe("Android - Find element tests", () => {
 		await expect(className).toHaveText("API Demos");
 	});
 
-	// it("find multiple elements", async () => {
-	// 	const expectedList = ["API Demos", "Action Bar", "Activity"];
-	// 	const actualList = [];
-	// 	// find multiple elements
-	// 	const textList = await $$("android.widget.TextView");
-	// 	// loop through all elements
-	// 	for (const element of textList) {
-	// 		actualList.push(await element.getText());
-	// 	}
-	// 	// compare both lists (I used one element only, because otherwise it wouldn't work)
-	// 	await expect(actualList).toContain(expectedList[1]);
-	// });
+	// doubble $$ is used here
+	it("find multiple elements", async () => {
+		const expectedList = ["API Demos", "Action Bar", "Activity"];
+		const actualList = [];
+		// find multiple elements (if we used $, only 1st element would be returned)
+		const textList = await $$("android.widget.TextView");
+		// loop through all elements
+		for (const element of textList) {
+			actualList.push(await element.getText());
+		}
+		// compare both lists (I used one element only, because otherwise it wouldn't work)
+		await expect(actualList).toContain(expectedList[1]);
+	});
 
 	// xit === it.skip
 	// xpath - (//tagname[@attribute=value])
@@ -47,21 +46,8 @@ describe("Android - Find element tests", () => {
 		await expect(textAssertion).toHaveText("You selected: 1 , Command two");
 	});
 
-	// it("Find element with UIAutomator", async () => {
-	// 	await $('android=new UiSelector().textContains("Alert")').click();
-	// });
-
-	// it("working with text input field", async () => {
-	// 	const viewButton = await $("~Views");
-	// 	await viewButton.click();
-	// 	await $("~Auto Complete").click();
-	// 	await $("~1. Screen Top").click();
-
-	// 	const countryInputField = await $(
-	// 		"//*[@resource-id='io.appium.android.apis:id/edit']"
-	// 	);
-	// 	await countryInputField.addValue("Canada"); // or setValue()
-	// 	await expect(countryInputField).toHaveText("Canada");
-	// 	// await driver.pause(3000);
-	// });
+	// additional selectors provided by android framework
+	it("Find element with UIAutomator", async () => {
+		await $('android=new UiSelector().textContains("Alert")').click();
+	});
 });
