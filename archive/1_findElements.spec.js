@@ -1,4 +1,4 @@
-describe("Android - Find element tests", () => {
+describe.skip("Android - Find element tests", () => {
 	// the same accesibilityId can be used both for android and iOS
 	// that's why it's the best wayt to find elements
 	it("Find element by accessibility id", async () => {

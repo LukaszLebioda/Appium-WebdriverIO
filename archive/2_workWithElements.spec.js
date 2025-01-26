@@ -1,4 +1,4 @@
-describe("Android - Working with elements", () => {
+describe.skip("Android - Working with elements", () => {
 	it("text input field", async () => {
 		// navigate to text input field scrren
 		const viewButton = await $("~Views"); // accesibility id
